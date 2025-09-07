@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayan Chauhan Rishta Landing Page</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(60, 60, 120, 0.15);
+            padding: 40px 32px 32px 32px;
+            text-align: center;
+            max-width: 350px;
+        }
+        .rotating-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #6366f1;
+            margin-bottom: 24px;
+            animation: rotate 4s linear infinite;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3730a3;
+            margin-bottom: 12px;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #6366f1;
+            margin-bottom: 20px;
+        }
+        .cta {
+            background: #6366f1;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .cta:hover {
+            background: #3730a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="nayan.png " alt="Nayan Chauhan" class="rotating-img">
+        <div class="name">Nayan Chauhan</div>
+        <div class="subtitle">Looking for Rishtas!<br>Ready to get married 💍</div>
+        <button class="cta" onclick="showCongratsPopup()">Send Rishta</button>
+    </div>
+    <div id="congrats-popup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(99,102,241,0.15);z-index:1000;align-items:center;justify-content:center;">
+        <div style="background:#fff;border-radius:20px;box-shadow:0 8px 32px rgba(60,60,120,0.18);padding:36px 32px 28px 32px;max-width:350px;text-align:center;position:relative;">
+            <span style="font-size:2.5rem;">🎉</span>
+            <div style="font-size:1.5rem;font-weight:700;color:#3730a3;margin:16px 0 8px 0;">Congratulations!</div>
+            <div style="font-size:1.1rem;color:#6366f1;margin-bottom:18px;">Your rishta has been sent!<br><b>You are truly special to Nayan.<br>Wishing you a beautiful journey ahead! 💖</b></div>
+            <button onclick="closeCongratsPopup()" style="background:#6366f1;color:#fff;border:none;border-radius:8px;padding:10px 24px;font-size:1rem;font-weight:600;cursor:pointer;">Close</button>
+        </div>
+    </div>
+    <script>
+    function showCongratsPopup() {
+        document.getElementById('congrats-popup').style.display = 'flex';
+    }
+    function closeCongratsPopup() {
+        document.getElementById('congrats-popup').style.display = 'none';
+    }
+    // Make popup use flexbox for centering
+    window.onload = function() {
+        var popup = document.getElementById('congrats-popup');
+        if (popup) popup.style.display = 'none';
+        popup && (popup.style.display = 'none', popup.style.alignItems = 'center', popup.style.justifyContent = 'center', popup.style.display = 'none');
+    }
+    </script>
+    </div>
+</body>
+</html>
